@@ -11,7 +11,9 @@
 <table class="table table-bordered">
     <tr>
         <td>ID</td>
-        <td>Department</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>City</td>
         <td>Delete</td>
         <td>Update</td>
         <td>Details</td>
@@ -21,10 +23,12 @@
     {
         <tr>
             <td>@x.PerId</td>
-            @*<td>@x.DepartmentName</td>
-            <td><a href="/Department/DeleteDepartment/@x.Id" class="btn btn-danger">Delete</a></td>
-            <td><a href="/Department/UpdateDepartment/@x.Id" class="btn btn-success">Update</a></td>
-            <td><a href="#" class="btn btn-info">Details</a></td>*@
+            <td>@x.Name</td>
+            <td>@x.Surname</td>
+            <td>@x.City</td>
+            <td><a href="/Department/DeleteDepartment/@x.PerId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Department/UpdateDepartment/@x.PerId" class="btn btn-success">Update</a></td>
+            <td><a href="#" class="btn btn-info">Details</a></td>
         </tr>
     }
 </table>

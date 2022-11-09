@@ -418,3 +418,4 @@ D:\.netPro\CoreDepartment\CoreDepartment\bin\Debug\netcoreapp3.1\Microsoft.Exten
 D:\.netPro\CoreDepartment\CoreDepartment\obj\Debug\netcoreapp3.1\CoreDepartment.MvcApplicationPartsAssemblyInfo.cs
 D:\.netPro\CoreDepartment\CoreDepartment\obj\Debug\netcoreapp3.1\Razor\Views\Department\UpdateDepartment.cshtml.g.cs
 D:\.netPro\CoreDepartment\CoreDepartment\obj\Debug\netcoreapp3.1\Razor\Views\Personel\Index.cshtml.g.cs
+D:\.netPro\CoreDepartment\CoreDepartment\obj\Debug\netcoreapp3.1\Razor\Views\Personel\NewPersonel.cshtml.g.cs

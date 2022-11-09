@@ -1,0 +1,25 @@
+﻿@model CoreDepartment.Models.Personel
+
+@{
+    ViewData["Title"] = "NewPersonel";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h1>NewPersonel</h1>
+<br />
+<form class="form-group" method="post">
+
+    <b> @Html.LabelFor(x => x.Name) </b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <b> @Html.LabelFor(x => x.Surname) </b>
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br />
+    <b> @Html.LabelFor(x => x.City) </b>
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+    <b> @Html.DropDownListFor(x => x.Department.Id, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" }) </b>
+    <br />
+    <button class="btn btn-info">Add Personel</button>
+
+</form>

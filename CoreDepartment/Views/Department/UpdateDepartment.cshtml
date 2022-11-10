@@ -9,7 +9,7 @@
 @using(Html.BeginForm("UpdateDepartment","Department","FormMethod.Post"))
 {
 <b>Departman ID</b>
-    @Html.TextBoxFor(x=>x.Id,new {@class="form-control"})
+    @Html.TextBoxFor(x=>x.DepartmentId, new {@class="form-control"})
 <br />
 <b>Departman Adı</b>
     @Html.TextBoxFor(x=>x.DepartmentName,new {@class="form-control"})

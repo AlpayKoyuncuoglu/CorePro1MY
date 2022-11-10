@@ -23,7 +23,7 @@ namespace CoreDepartment.Controllers
                                            select new SelectListItem
                                            {
                                                Text = x.DepartmentName,
-                                               Value = x.Id.ToString()
+                                               Value = x.DepartmentId.ToString()
                                            }
                                            ).ToList();
             ViewBag.val = values;
@@ -31,7 +31,7 @@ namespace CoreDepartment.Controllers
         }
         public IActionResult NewPersonel(Personel p)
         {
-            var prsnl = c.Departments.Where(x => x.Id == p.Department.Id).FirstOrDefault();
+            var prsnl = c.Departments.Where(x => x.DepartmentId == p.Department.DepartmentId).FirstOrDefault();
             p.Department = prsnl;
             c.Personels.Add(p);
             c.SaveChanges();

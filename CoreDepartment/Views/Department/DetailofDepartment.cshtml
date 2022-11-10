@@ -1,0 +1,28 @@
+﻿@using CoreDepartment.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "DetailofDepartment";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h1>DetailofDepartment</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>City</td>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PerId</td>
+            <td>@x.Name</td>
+            <td>@x.Surname</td>
+            <td>@x.City</td>
+        </tr>
+    }
+</table>

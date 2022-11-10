@@ -39,10 +39,16 @@ namespace CoreDepartment.Controllers
         [HttpPost]
         public IActionResult UpdateDepartment(Department d)
         {
-            var value = c.Departments.Find(d.Id);
+            var value = c.Departments.Find(d.DepartmentId);
             value.DepartmentName = d.DepartmentName;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult DetailofDepartment(int id)
+        {
+            var values = c.Personels.Where(x => x.DepartmentId == id).ToList();
+            return View(values);
         }
 
     }

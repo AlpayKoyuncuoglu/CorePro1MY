@@ -10,5 +10,6 @@ namespace CoreDepartment.Models
         public string Surname { get; set; }
         public string City { get; set; }
         public Department Department { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

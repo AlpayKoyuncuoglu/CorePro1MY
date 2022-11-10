@@ -19,7 +19,7 @@
     @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
     <br />
     <b> @Html.LabelFor(x => x.Department) </b>
-    @Html.DropDownListFor(x => x.Department.Id, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.Department.DepartmentId, (List<SelectListItem>)ViewBag.val, new { @class = "form-control" })
     <br />
     <button class="btn btn-info">Add Personel</button>
 

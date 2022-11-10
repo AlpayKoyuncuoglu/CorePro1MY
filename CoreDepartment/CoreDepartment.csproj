@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\web\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\web\fonts\fontawesome-webfont.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">

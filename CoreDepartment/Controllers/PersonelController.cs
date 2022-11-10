@@ -1,5 +1,8 @@
 ﻿using CoreDepartment.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CoreDepartment.Controllers
@@ -10,8 +13,24 @@ namespace CoreDepartment.Controllers
 
         public IActionResult Index()
         {
-            var values = c.Personels.ToList();
+            var values = c.Personels.Include(x => x.Department).ToList();
             return View(values);
         }
+        [HttpGet]
+        public IActionResult NewPersonel()
+        {
+            List<SelectListItem> values = (from x in c.Departments.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.DepartmentName,
+                                                 Value = x.Id.ToString()
+                                             }
+                                           ).ToList();
+            ViewBag.val = values;
+            return View();
+        }
+
+
+
     }
 }

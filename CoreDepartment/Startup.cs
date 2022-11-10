@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +24,11 @@ namespace CoreDepartment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+            {
+                x.LoginPath = "/Login/Login";
+            });
             //proje çalýþýyorken cshtml üzerinde yapýlan deðiþiklikler yeniden projeyi çalýþtýrmaya gerek kalmadan görüntülenir
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }

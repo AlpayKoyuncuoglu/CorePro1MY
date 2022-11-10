@@ -48,6 +48,8 @@ namespace CoreDepartment.Controllers
         public IActionResult DetailofDepartment(int id)
         {
             var values = c.Personels.Where(x => x.DepartmentId == id).ToList();
+            var dprtmntName = c.Departments.Where(x => x.DepartmentId == id).Select(y => y.DepartmentName).FirstOrDefault();
+            ViewBag.dprtmntName = dprtmntName;
             return View(values);
         }
 

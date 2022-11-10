@@ -24,18 +24,20 @@ namespace CoreDepartment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
-                x.LoginPath = "/Login/Login";
+                options.LoginPath = "/Login/SignIn/";
             });
             //proje çalýþýyorken cshtml üzerinde yapýlan deðiþiklikler yeniden projeyi çalýþtýrmaya gerek kalmadan görüntülenir
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
